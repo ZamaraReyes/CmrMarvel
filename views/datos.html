@@ -1,0 +1,79 @@
+<header></header>
+<div class="flex-container">
+    <section>
+    <center>
+    <div class="ficha" ng-repeat="user in users track by user.id">
+        <img src="{{user.photo}}">
+        <p>{{user.name}}</p>
+        <p>{{user.telephone}}</p>
+        <p>{{user.email}}</p>
+        <p ng-if="user.imgFavorites.length == 0">0</p>
+        <p>Tiene <span>{{user.imgFavorites.length}}</span> gifs favoritos</p>
+        <p>Tiene <span>{{user.comFavorites.length}}</span> comics favoritos</p>
+        <div>
+            <a href="/user/{{user.id}}"><i class="fa fa-eye"></i></a>
+            <i class="fa fa-edit" ng-click="editUser(user)"></i>
+            <i class="fa fa-trash" ng-click="removeUser(user)"></i>
+        </div>
+    </div>
+    </center>
+    </section>
+    <aside>
+        <nav>
+            <ul>
+                <li ng-click="verDatos()"><a href="/">Datos</a></li>
+                <li ng-click="verImages()"><a href="/">Gifs</a></li>
+                <li ng-click="verComics()"><a href="/">Otros</a></li> 
+            </ul>
+        </nav>
+        <div ng-hide="datos">
+            <form name="formulario">
+                <label>Nombre:</label>
+                <input type="text" placeholder="Introduce nombre..." ng-model="newUser.name" ng-pattern="/^[a-zA-Z]*$/" ng-required="">
+                <small class="error-msg" ng-show="formulario.name.$invalid">Introduce un nombre válido</small>
+                <label>Email:</label>
+                <input type="text" placeholder="Introduce email..." ng-model="newUser.email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" ng-required="">
+                <small class="error-msg" ng-show="editForm.email.$invalid">Introduce un correo válido</small>
+                <label>Teléfono:</label>
+                <input type="text" ng-model="newUser.telephone" placeholder="Introduce móvil..." ng-required="">
+                <label>Foto:</label>
+                <input type="text" placeholder="Introduce foto..." ng-model="newUser.photo" ng-pattern="/^(https?:\/\/)?((([a-z\d]([a-z\d-]*[a-z\d])*)\.)+[a-z]{2,}|((\d{1,3}\.){3}\d{1,3}))(\:\d+)?(\/[-a-z\d%_.~+]*)*(\?[;&a-z\d%_.~+=-]*)?(\#[-a-z\d_]*)?$/" ng-required="">
+                <small class="error-msg" ng-show="editForm.photo.$invalid">Introduce una url válida</small>
+            </form>
+        </div>
+        <div ng-show="galeriaimg">
+            <p>Gifs favoritos</p>
+            <div class="galeria">
+                <img ng-repeat="gif in newUser.imgFavorites" ng-click="removeGif(gif)" ng-model="gif" src="{{gif}}">
+            </div>
+            <input ng-model="palabra" type="text" placeholder="Buscar gif..">
+            <button type="submit" ng-click="searchImage(0)">Buscar</button>
+            <ul id="buscador">
+                <li><a ng-click="sortBy='trending_datetime'">trending</a></li>
+                <li><a>|</a></li>
+                <li><a ng-click="sortBy='is_indexable'">recents</a></li>
+            </ul>
+            <div class="galeria">
+                <img ng-repeat="image in images | orderBy:sortBy:reverse" ng-click="favoritesImg(image)" ng-model="gif" src="{{image}}">
+            </div>
+            <i class="fa fa-angle-left" ng-show="izquierda" ng-click="searchImage(-8)"></i>
+            <i class="fa fa-angle-right" ng-show="derecha" ng-click="searchImage(8)"></i>
+        </div>
+        <div ng-show="galeriacom">
+            <p>Comics de Marvel favorito</p>
+            <div class="galeria">
+                <img ng-repeat="serie in newUser.comFavorites" ng-click="removeComic(comic)" ng-model="serie" src="{{serie}}">
+            </div>
+            <input ng-model="palabrita" type="text" placeholder="Buscar comics que empiezan por..">
+            <button type="submit" ng-click="searchComic(0)">Buscar</button>
+            <div class="galeria">
+                <img ng-repeat="comic in comics track by $index" ng-click="favoritesCom(comic)" ng-model="serie" src="{{comic}}">
+            </div>
+            <i class="fa fa-angle-left" ng-show="izquierda" ng-click="searchComic(-8)"></i>
+            <i class="fa fa-angle-right" ng-show="derecha" ng-click="searchComic(8)" ng-dblclick="searchComic(16)"></i>
+        </div>
+        <button type="submit" ng-click="createNewUser()">Crear</button>
+        <button type="submit" ng-click="updateUser(newUser)">Modificar</button>
+    </aside>
+        
+</div>

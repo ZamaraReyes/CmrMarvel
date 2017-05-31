@@ -1,0 +1,289 @@
+html, body {
+    margin: 0 auto;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    color: #154360;
+    letter-spacing: 1;
+    font-family: "Roboto Slab", serif;
+}
+
+a:link, a:visited {
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:active {
+    font-weight: 700;
+}
+
+p, small, body {
+    font-family: "Lato", sans-serif;
+}
+
+small {
+    color: red;
+}
+
+span {
+    font-weight: 700;
+}
+
+img {
+    padding: 10px;
+}
+
+section img {
+    width: 200px;
+}
+
+form p, form label {
+    color: #ffffff;
+}
+
+nav {
+    margin: -50px;
+    margin-bottom: 40px;
+    background-color: #1a5276;
+}
+
+header {
+    height: 300px;
+    justify-content: space-between;
+    background-color: #154360;
+    background-size: cover;
+	background-repeat: no-repeat;
+    background-image: url(../img/marvel.jpeg);
+}
+
+header h1 {
+    text-align: left;
+}
+
+header div, header h1 {
+    display: inline-block;
+}
+
+header div input {
+    width: 30%;
+}
+
+body {
+    background-color: #154360;
+}
+
+aside {
+    float: right;
+    width: 40%;
+    background-color: #154360;
+}
+
+aside p {
+    color: #ffffff;
+}
+
+section {
+    width: 100%;
+    float: left;
+    background-color: #eaf2f8;
+}
+
+aside, section {
+    padding: 50px;
+    display: inline-block;
+}
+
+section i:hover {
+    color: #154360;
+    transition: .3s ease;
+}
+
+aside i {
+    color: #ffffff;
+}
+
+input {
+    border: 1px solid #a9cce3;
+    margin: 6px 0;
+    padding: 6px;
+    border-radius: 5px;
+    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+    color: #000000;
+    font-family: "Lato", sans-serif;
+}
+
+input:focus {
+    transition: .3s ease;
+    border: 1px solid #154360;
+    box-shadow: 1px 1px 10px #a9cce3;
+}
+
+input.ng-pristine.ng-untouched {
+    border-color: #a9cce3;
+}
+
+input.ng-valid.ng-touched.ng-dirty {
+    border-color: green;
+}
+
+input.ng-invalid.ng-touched {
+    border-color: red;
+}
+
+input:focus + small.error-msg{
+    display: none;
+}
+
+button {
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+    padding: 6px 30px;
+    margin: 15px 5px;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1;
+    background-color: #154360;
+    font-family: "Lato", sans-serif;
+}
+
+button:hover {
+    color: #ffffff;
+    transition: .3s ease;
+    border: 1px solid #1a5276;
+    background-color: #1a5276;
+}
+
+ul {
+    padding: 0px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+li {
+    list-style: none;
+}
+
+li a {
+    display: inline-block;
+    padding: 10px 50px 10px 50px;
+}
+
+li a:hover, li a:focus, li a:active {
+    transition: .3s ease;
+    background-color: #154360;
+}
+
+label {
+    margin-top: 5px;
+    display: inherit;
+}
+
+#buscador li {
+    color: #ffffff;
+}
+
+#buscador li a {
+    padding: 10px 0;
+}
+
+#buscador li a:focus, #buscador li a:active {
+    font-weight: 700;
+    transition: .3s ease;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.personal {
+    flex: 4;
+}
+
+.container {
+    padding: 50px;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.galeria {
+    width: 100%;
+    height: 150px;
+    overflow: scroll;
+}
+
+.galeria img {
+    width: 100px;
+    display: inline-block;
+}
+
+.titulo {
+    color: #ffffff;
+    font-size: 20px;
+    font-family: "Roboto Slab", serif;
+}
+
+.datos p {
+    color: #ffffff;
+}
+
+.nav input {
+    margin: 6px;
+    float: right;
+}
+
+.ficha img {
+    float: left;
+}
+
+.ficha div a {
+    color: #000000;
+}
+
+.datospersonal {
+    float: right;
+    padding: 30px 0;
+}
+
+.datospersonal div {
+    padding-top: 30px;
+}
+
+.form {
+    position: relative;
+    background-color: antiquewhite;
+}
+
+.ficha {
+    margin: 30px;
+    padding: 40px;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #000000;
+}
+
+.ficha:hover {
+    transition: .3s ease;
+    border: 1px solid #a9cce3;
+}
+
+.ficha p:nth-child(2) {
+    font-size: 24px;
+}
+
+.datos p, .personal p:nth-child(1) {
+    font-size: 24px;
+}
