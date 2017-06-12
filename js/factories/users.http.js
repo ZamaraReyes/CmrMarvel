@@ -52,13 +52,11 @@
                         img += url+formato;
                         imagen.photo = img;
                         imagen.id = element.id;
-                        /*imagen.id = randId();*/
                     }else if (element.images == 0){
                         img = 'http://placehold.it/100x150';
                         imagen.photo = img;
                         imagen.id = element.id;
                     }
-                    console.log(response.data.data.results);
                     comics.push(img);
                 });
                 return comics;

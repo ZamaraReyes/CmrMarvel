@@ -11,14 +11,14 @@
         $routeProvider
             .when('/', {
                 controller : 'HomeController',
-                templateUrl : '/views/datos.html'
+                templateUrl : 'views/datos.html'
         })
             .when('/user/:id', {
                 controller : 'UserController',
-                templateUrl : '/views/perfil.html'
+                templateUrl : 'views/perfil.html'
         })
             .otherwise({
-                redirectTo : '/'
+                redirectTo : 'CmrMarvel/'
         });
     }
 })();

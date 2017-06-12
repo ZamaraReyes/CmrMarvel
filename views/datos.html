@@ -1,4 +1,3 @@
-<header></header>
 <div class="flex-container">
     <section>
     <center>
@@ -11,7 +10,7 @@
         <p>Tiene <span>{{user.imgFavorites.length}}</span> gifs favoritos</p>
         <p>Tiene <span>{{user.comFavorites.length}}</span> comics favoritos</p>
         <div>
-            <a href="/user/{{user.id}}"><i class="fa fa-eye"></i></a>
+            <a href="user/{{user.id}}"><i class="fa fa-eye"></i></a>
             <i class="fa fa-edit" ng-click="editUser(user)"></i>
             <i class="fa fa-trash" ng-click="removeUser(user)"></i>
         </div>
@@ -21,9 +20,9 @@
     <aside>
         <nav>
             <ul>
-                <li ng-click="verDatos()"><a href="/">Datos</a></li>
-                <li ng-click="verImages()"><a href="/">Gifs</a></li>
-                <li ng-click="verComics()"><a href="/">Otros</a></li> 
+                <li ng-click="verDatos()"><a href="#">Datos</a></li>
+                <li ng-click="verImages()"><a href="#">Gifs</a></li>
+                <li ng-click="verComics()"><a href="#">Otros</a></li> 
             </ul>
         </nav>
         <div ng-hide="datos">

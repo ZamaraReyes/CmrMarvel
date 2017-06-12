@@ -44,6 +44,8 @@
                     if (user.id == id ) userResult = user;
                 })
                 return userResult;
+                console.log(userResult);
+                console.log(user);
                 
                 //return users.filter( function (user ){ user.id == id})[0];
             }

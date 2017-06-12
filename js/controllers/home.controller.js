@@ -118,7 +118,6 @@
         }
         
         function favoritesImg(image) {
-            $scope.favoritesImg = 0;
             if (!$scope.newUser.imgFavorites){
                 $scope.newUser.imgFavorites = [];
             }
