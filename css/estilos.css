@@ -11,7 +11,6 @@ h1, h2 {
 }
 
 a:link, a:visited {
-    color: #ffffff;
     cursor: pointer;
     text-decoration: none;
 }
@@ -71,17 +70,13 @@ header div input {
     width: 30%;
 }
 
-body {
-    background-color: #154360;
-}
-
 aside {
     float: right;
     width: 40%;
     background-color: #154360;
 }
 
-aside p {
+aside p, aside a {
     color: #ffffff;
 }
 
@@ -188,6 +183,14 @@ label {
     display: inherit;
 }
 
+body {
+    background-color: #eaf2f8;
+}
+
+#volver a:link, #volver a:visited {
+    color: #154360;
+}
+
 #buscador li {
     color: #ffffff;
 }
@@ -207,6 +210,7 @@ label {
 
 .personal {
     flex: 4;
+    padding: 80px;
 }
 
 .container {
@@ -279,6 +283,6 @@ label {
     font-size: 24px;
 }
 
-.datos p, .personal p:nth-child(1) {
+.datos p, h2 {
     font-size: 24px;
 }
